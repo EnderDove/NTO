@@ -27,17 +27,6 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "aebaa726-4aeb-4acc-9918-34a96a168c66",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "StickDeadzone",
-                    "groups": "",
-                    "action": "Camera",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "493ea48d-36ea-44e1-a5d9-7b7651a9ae77",
                     "path": "<Mouse>/delta",
                     "interactions": "",
@@ -101,6 +90,34 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "PlayerActions",
+            "id": "201a7df4-6627-4376-afea-8a5d2b273cc9",
+            "actions": [
+                {
+                    "name": "Roll",
+                    "type": "Button",
+                    "id": "3d2a5b29-4acc-41f9-a5e0-fe2a094a7de9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1cbc740b-4f3d-46f8-be8b-583cae7969c0",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
