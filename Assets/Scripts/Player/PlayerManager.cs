@@ -38,7 +38,6 @@ namespace EnderDove
             playerLocomotion.HandleRollingAndSprinting(delta);
         }
 
-
         private void FixedUpdate()
         {
             float delta = Time.fixedDeltaTime;

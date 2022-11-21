@@ -5,3 +5,7 @@ Packages
 Temp
 UserSettings
 NTO.sln
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp.csproj
+*.csproj
+*.sln

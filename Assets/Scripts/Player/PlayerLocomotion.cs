@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EnderDove
@@ -49,9 +47,9 @@ namespace EnderDove
             targetDir.Normalize();
             targetDir.y = 0;
 
-            if(targetDir == Vector3.zero)
+            if (targetDir == Vector3.zero)
                 targetDir = playerTransform.forward;
-            
+
 
             float rs = rotationSpeed;
             Quaternion tr = Quaternion.LookRotation(targetDir);
@@ -62,16 +60,16 @@ namespace EnderDove
 
         public void HandleMovement(float delta)
         {
-            if(inputHandler.rollFlag)
+            if (inputHandler.rollFlag)
                 return;
-            
+
             moveDirection = cameraObject.forward * inputHandler.vertical;
             moveDirection += cameraObject.right * inputHandler.horisontal;
             moveDirection.Normalize();
             moveDirection.y = 0;
 
             float speed = movementSpeed;
-            if(inputHandler.sprintFlag)
+            if (inputHandler.sprintFlag)
             {
                 speed = sprintSpeed;
                 playerManager.isSprinting = true;
@@ -87,7 +85,7 @@ namespace EnderDove
 
             animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
 
-            if(animatorHandler.canRotate)
+            if (animatorHandler.canRotate)
             {
                 HandleRotation(delta);
             }
@@ -95,15 +93,15 @@ namespace EnderDove
 
         public void HandleRollingAndSprinting(float delta)
         {
-            if(animatorHandler.anim.GetBool("isInteracting"))
+            if (animatorHandler.anim.GetBool("isInteracting"))
                 return;
 
-            if(inputHandler.rollFlag)
+            if (inputHandler.rollFlag)
             {
                 moveDirection = cameraObject.forward * inputHandler.vertical;
                 moveDirection = cameraObject.right * inputHandler.horisontal;
 
-                if(inputHandler.moveAmount > 0)
+                if (inputHandler.moveAmount > 0)
                 {
                     animatorHandler.PlayTargetAnimation("Rolling", true);
                     moveDirection.y = 0;
@@ -117,6 +115,6 @@ namespace EnderDove
             }
         }
 
-    #endregion
+        #endregion
     }
 }
