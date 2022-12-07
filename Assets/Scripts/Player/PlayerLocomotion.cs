@@ -99,32 +99,10 @@ namespace EnderDove
             {
                 moveDirection = cameraObject.forward * inputHandler.vertical;
                 moveDirection = cameraObject.right * inputHandler.horisontal;
-
-<<<<<<< Updated upstream
-                if(inputHandler.moveAmount > 0)
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
+                
                 playerManager.SubtractStaminaValue(rollStaminaConsumption);
 
->>>>>>> Stashed changes
-=======
-                playerManager.SubtractStaminaValue(rollStaminaConsumption);
-
->>>>>>> Stashed changes
-=======
-                playerManager.SubtractStaminaValue(rollStaminaConsumption);
-
->>>>>>> Stashed changes
-=======
-                playerManager.SubtractStaminaValue(rollStaminaConsumption);
-
->>>>>>> Stashed changes
                 if (inputHandler.moveAmount > 0)
->>>>>>> Stashed changes
                 {
                     animatorHandler.PlayTargetAnimation("Rolling", true);
                     moveDirection.y = 0;
