@@ -65,8 +65,11 @@
     <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Player\ResetInteracting.cs" />
     <Compile Include="Assets\Scripts\Outline.cs" />
-    <Compile Include="Assets\Scripts\Item.cs" />
-    <Compile Include="Assets\Scripts\WeaponItem.cs" />
+    <Compile Include="Assets\Scripts\PlayerItems\Item.cs" />
+    <Compile Include="Assets\Scripts\PlayerItems\WeaponItem.cs" />
+    <Compile Include="Assets\Scripts\PlayerItems\WeaponHolderSlot.cs" />
+    <Compile Include="Assets\Scripts\PlayerItems\WeaponSlotManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerItems\PlayerInventory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Shaders\OutlineFill.shader" />
