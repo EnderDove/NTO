@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18355863, g: 0.22908959, b: 0.30554494, a: 1}
+  m_IndirectSpecularColor: {r: 0.18356314, g: 0.22909339, b: 0.30552477, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -919,6 +919,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb61d1754943a7c43b6ab379ffa928c4, type: 3}
+--- !u!1 &1132644565 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eb61d1754943a7c43b6ab379ffa928c4, type: 3}
+  m_PrefabInstance: {fileID: 1187628942}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1173520579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1211,6 +1216,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eb61d1754943a7c43b6ab379ffa928c4, type: 3}
   m_PrefabInstance: {fileID: 1187628942}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1414919843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132644565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.9473679, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &1511054349 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eb61d1754943a7c43b6ab379ffa928c4, type: 3}
@@ -1550,6 +1573,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2791452711392378315, guid: 928b5f00dd7911a48a7f9a633ef0e1de, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791452711392378315, guid: 928b5f00dd7911a48a7f9a633ef0e1de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791452711392378315, guid: 928b5f00dd7911a48a7f9a633ef0e1de, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2791452712604028492, guid: 928b5f00dd7911a48a7f9a633ef0e1de, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1560,7 +1595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2791452712604028492, guid: 928b5f00dd7911a48a7f9a633ef0e1de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 2791452712604028492, guid: 928b5f00dd7911a48a7f9a633ef0e1de, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1594,10 +1629,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2791452712604028494, guid: 928b5f00dd7911a48a7f9a633ef0e1de, type: 3}
+      propertyPath: m_Height
+      value: 1.4360199
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791452712604028494, guid: 928b5f00dd7911a48a7f9a633ef0e1de, type: 3}
+      propertyPath: m_Radius
+      value: 0.151474
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791452712604028494, guid: 928b5f00dd7911a48a7f9a633ef0e1de, type: 3}
+      propertyPath: m_Center.x
+      value: 0.001876831
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791452712604028494, guid: 928b5f00dd7911a48a7f9a633ef0e1de, type: 3}
+      propertyPath: m_Center.y
+      value: 1.0582929
+      objectReference: {fileID: 0}
     - target: {fileID: 2791452712604028496, guid: 928b5f00dd7911a48a7f9a633ef0e1de, type: 3}
       propertyPath: normalCamera
       value: 
       objectReference: {fileID: 2067735448}
+    - target: {fileID: 2791452712604028496, guid: 928b5f00dd7911a48a7f9a633ef0e1de, type: 3}
+      propertyPath: groundDetectionRayStartPoint
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 2791452712604028498, guid: 928b5f00dd7911a48a7f9a633ef0e1de, type: 3}
       propertyPath: m_Name
       value: Player 1
