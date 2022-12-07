@@ -22,6 +22,7 @@ namespace EnderDove
         [SerializeField] private float movementSpeed = 5;
         [SerializeField] private float sprintSpeed = 7;
         [SerializeField] private float rotationSpeed = 10;
+        [SerializeField] private float rollStaminaConsumption = 15f;
 
         void Start()
         {
@@ -75,12 +76,8 @@ namespace EnderDove
             {
                 speed = sprintSpeed;
                 playerManager.isSprinting = true;
-                moveDirection *= speed;
             }
-            else
-            {
-                moveDirection *= speed;
-            }
+            moveDirection *= speed;
 
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
             rigidbody.velocity = projectedVelocity;
@@ -103,7 +100,31 @@ namespace EnderDove
                 moveDirection = cameraObject.forward * inputHandler.vertical;
                 moveDirection = cameraObject.right * inputHandler.horisontal;
 
+<<<<<<< Updated upstream
                 if(inputHandler.moveAmount > 0)
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+                playerManager.SubtractStaminaValue(rollStaminaConsumption);
+
+>>>>>>> Stashed changes
+=======
+                playerManager.SubtractStaminaValue(rollStaminaConsumption);
+
+>>>>>>> Stashed changes
+=======
+                playerManager.SubtractStaminaValue(rollStaminaConsumption);
+
+>>>>>>> Stashed changes
+=======
+                playerManager.SubtractStaminaValue(rollStaminaConsumption);
+
+>>>>>>> Stashed changes
+                if (inputHandler.moveAmount > 0)
+>>>>>>> Stashed changes
                 {
                     animatorHandler.PlayTargetAnimation("Rolling", true);
                     moveDirection.y = 0;
