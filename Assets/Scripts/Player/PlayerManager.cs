@@ -25,6 +25,8 @@ namespace EnderDove
         [Header("Player Flags")]
         public bool isInteracting;
         public bool isSprinting;
+        public bool isInAir;
+        public bool isGrounded;
 
         private void Awake()
         {
@@ -46,9 +48,9 @@ namespace EnderDove
             inputHandler.TickInput(delta);
             playerLocomotion.HandleMovement(delta);
             playerLocomotion.HandleRollingAndSprinting(delta);
+            playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
             RegenStamina(delta);
         }
-
 
         private void FixedUpdate()
         {
@@ -66,6 +68,11 @@ namespace EnderDove
             inputHandler.rollFlag = false;
             inputHandler.sprintFlag = false;
             isSprinting = inputHandler.b_Input;
+
+            if (isInAir)
+            {
+                playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
+            }
         }
 
         public void RegenStamina(float value)
@@ -76,10 +83,10 @@ namespace EnderDove
             }
         }
 
-        public void SubtractStaminaValue(float value)
+        public void ChangeStaminaValue(float value)
         {
             _lastTimeSubstarctingStaminaValue = Time.time;
-            StaminaValue -= value;
+            StaminaValue += value;
         }
     }
 }

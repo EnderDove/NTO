@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EnderDove
@@ -24,7 +22,7 @@ namespace EnderDove
 
         public void OnEnable()
         {
-            if(inputActions == null)
+            if (inputActions == null)
             {
                 inputActions = new PlayerControls();
                 inputActions.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
@@ -60,14 +58,14 @@ namespace EnderDove
         {
             b_Input = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Started;
 
-            if(b_Input)
+            if (b_Input)
             {
                 rollInputTimer += delta;
                 sprintFlag = true;
             }
             else
             {
-                if(rollInputTimer > 0 && rollInputTimer < 0.5f)
+                if (rollInputTimer > 0 && rollInputTimer < 0.5f)
                 {
                     sprintFlag = false;
                     rollFlag = true;

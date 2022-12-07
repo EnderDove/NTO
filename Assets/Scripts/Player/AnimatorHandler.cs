@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EnderDove
@@ -10,7 +8,7 @@ namespace EnderDove
         InputHandler inputHandler;
         PlayerLocomotion playerLocomotion;
         public Animator anim;
-        
+
         int vertical;
         int horisontal;
         public bool canRotate;
@@ -30,19 +28,19 @@ namespace EnderDove
             #region Vertical
             float v = 0;
 
-            if(verticalMovement > 0 && verticalMovement < 0.55f)
+            if (verticalMovement > 0 && verticalMovement < 0.55f)
             {
                 v = 0.5f;
             }
-            else if(verticalMovement > 0.55f)
+            else if (verticalMovement > 0.55f)
             {
                 v = 1;
             }
-            else if(verticalMovement < 0 && verticalMovement > -0.55f)
+            else if (verticalMovement < 0 && verticalMovement > -0.55f)
             {
-                v = - 0.5f;
+                v = -0.5f;
             }
-            else if(verticalMovement < -0.55f)
+            else if (verticalMovement < -0.55f)
             {
                 v = -1;
             }
@@ -51,19 +49,19 @@ namespace EnderDove
             #region Horizontal
             float h = 0;
 
-            if(horisontalMovement > 0 && horisontalMovement < 0.55f)
+            if (horisontalMovement > 0 && horisontalMovement < 0.55f)
             {
                 h = 0.5f;
             }
-            else if(horisontalMovement > 0.55f)
+            else if (horisontalMovement > 0.55f)
             {
                 h = 1;
             }
-            else if(horisontalMovement < 0 && horisontalMovement > -0.55f)
+            else if (horisontalMovement < 0 && horisontalMovement > -0.55f)
             {
-                h = - 0.5f;
+                h = -0.5f;
             }
-            else if(horisontalMovement < -0.55f)
+            else if (horisontalMovement < -0.55f)
             {
                 h = -1;
             }
@@ -98,7 +96,7 @@ namespace EnderDove
 
         void OnAnimatorMove()
         {
-            if(playerManager.isInteracting == false)
+            if (playerManager.isInteracting == false)
                 return;
 
             float delta = Time.deltaTime;
