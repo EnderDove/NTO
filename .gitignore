@@ -9,3 +9,5 @@ Assembly-CSharp-Editor.csproj
 Assembly-CSharp.csproj
 *.csproj
 *.sln
+*.vsidx
+.vs/NTO 69 paws/v17/.suo
