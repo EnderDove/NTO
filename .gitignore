@@ -5,3 +5,5 @@ Packages
 Temp
 UserSettings
 NTO.sln
+*.vsidx
+.vs/NTO 69 paws/FileContentIndex/read.lock
