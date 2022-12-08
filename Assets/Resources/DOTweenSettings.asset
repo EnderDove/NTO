@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useSafeMode: 1
   safeModeOptions:
-    logBehaviour: 2
+    logBehaviour: 3
     nestedTweenFailureBehaviour: 0
   timeScale: 1
   unscaledTimeScale: 1
@@ -41,8 +41,8 @@ MonoBehaviour:
     showPanel: 0
     audioEnabled: 1
     physicsEnabled: 1
-    physics2DEnabled: 1
-    spriteEnabled: 1
+    physics2DEnabled: 0
+    spriteEnabled: 0
     uiEnabled: 1
     textMeshProEnabled: 0
     tk2DEnabled: 0

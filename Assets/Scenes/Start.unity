@@ -1294,6 +1294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1663049306}
   - component: {fileID: 1663049307}
+  - component: {fileID: 1663049308}
   m_Layer: 0
   m_Name: Amulet
   m_TagString: Curse
@@ -1331,6 +1332,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 30
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1663049308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663049305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0efaced82730ec0499a7aa5cf2c49546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _curse: {fileID: 1663049306}
+  player: {fileID: 2791452711934990412}
+  timeToNextMove: 2
 --- !u!1 &1676637460
 GameObject:
   m_ObjectHideFlags: 0
