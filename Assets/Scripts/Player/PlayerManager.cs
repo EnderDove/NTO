@@ -67,7 +67,12 @@ namespace EnderDove
         {
             inputHandler.rollFlag = false;
             inputHandler.sprintFlag = false;
+<<<<<<< HEAD
             isSprinting = inputHandler.b_Input;
+=======
+            inputHandler.rb_Input = false;
+            inputHandler.rt_Input = false;
+>>>>>>> Vladimir
 
             if (isInAir)
             {

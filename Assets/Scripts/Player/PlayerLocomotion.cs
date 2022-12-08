@@ -27,6 +27,7 @@ namespace EnderDove
         [Header("Movement Stats")]
         [SerializeField] private float movementSpeed = 5;
         [SerializeField] private float sprintSpeed = 7;
+        [SerializeField] private float walkingSpeed = 3;
         [SerializeField] private float rotationSpeed = 10;
         [SerializeField] private float rollStaminaConsumption = 15f;
         [SerializeField] private float fallSpeed = 80;
@@ -85,12 +86,29 @@ namespace EnderDove
             moveDirection.y = 0;
 
             float speed = movementSpeed;
+<<<<<<< HEAD
             if (inputHandler.sprintFlag)
+=======
+            if (inputHandler.sprintFlag && inputHandler.moveAmount > 0.5f)
+>>>>>>> Vladimir
             {
                 speed = sprintSpeed;
                 playerManager.isSprinting = true;
+                moveDirection *= speed;
             }
-            moveDirection *= speed;
+            else
+            {
+                if (inputHandler.moveAmount < 0.5f)
+                {
+                    moveDirection *= walkingSpeed;
+                    playerManager.isSprinting = false;
+                }
+                else
+                {
+                    moveDirection *= speed;
+                    playerManager.isSprinting = false;
+                }
+            }
 
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
             rigidbody.velocity = projectedVelocity;
