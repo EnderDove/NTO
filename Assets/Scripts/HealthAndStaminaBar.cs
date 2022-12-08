@@ -10,8 +10,6 @@ namespace EnderDove
         public Slider HealthSlider;
         public Slider StaminaSlider;
 
-
-
         public void SetCurentHealth(int healthValue)
         {
             HealthSlider.value = healthValue;

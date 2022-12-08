@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace EnderDove
 {
@@ -184,7 +184,7 @@ namespace EnderDove
 
                     else
                     {
-                        animatorHandler.PlayTargetAnimation("Locomotion", false);
+                        animatorHandler.PlayTargetAnimation("Empty", false);
                         inAirTimer = 0;
                     }
 

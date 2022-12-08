@@ -18,6 +18,7 @@ namespace EnderDove
         public float maxHealthValue = 50f;
         [SerializeField] private float StaminaRegen = 5f;
         [SerializeField] private float DeltaTimeToAddStamina = 1f;
+        [SerializeField] private float RunningStaminaConsumption = 1f;
 
         private float _lastTimeSubstarctingStaminaValue;
 
@@ -32,7 +33,7 @@ namespace EnderDove
 
         private void Awake()
         {
-            cameraHandler = CameraHandler.singleton;
+            cameraHandler = FindObjectOfType<CameraHandler>();
         }
 
         void Start()
@@ -55,6 +56,11 @@ namespace EnderDove
             playerLocomotion.HandleRollingAndSprinting(delta);
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
             RegenStamina(delta);
+
+            if (isSprinting)
+            {
+                ChangeStaminaValue(delta);
+            }
         }
 
         private void FixedUpdate()
