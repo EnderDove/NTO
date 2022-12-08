@@ -37,6 +37,7 @@ namespace EnderDove
             _myTransform = transform;
             _defaultPosition = cameraTransform.localPosition.z;
             _ignoreLayers = ~(1 << 8 | 1 << 9 | 1 << 10);
+            targetTransform = FindObjectOfType<PlayerManager>().transform;
         }
 
         public void FollowTarget(float delta)
