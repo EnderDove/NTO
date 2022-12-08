@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\PlayerItems\WeaponSlotManager.cs" />
     <Compile Include="Assets\Scripts\ResolutionScaler.cs" />
     <Compile Include="Assets\Scripts\PlayerItems\PlayerInventory.cs" />
+    <Compile Include="Assets\SkythianCat\Glowing_Forest\Scripts\WaterGroup.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\HealthAndStaminaBar.cs" />
     <Compile Include="Assets\Scripts\Player\ResetAnimatorBool.cs" />
@@ -75,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Shaders\OutlineFill.shader" />
+    <None Include="Assets\WavingGrass\Shader\GrassWind.shader" />
     <None Include="Assets\Resources\Shaders\OutlineMask.shader" />
   </ItemGroup>
   <ItemGroup>
