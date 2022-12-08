@@ -13,16 +13,24 @@ namespace EnderDove
         CameraHandler cameraHandler;
         PlayerLocomotion playerLocomotion;
 
+        [Header("Curse")]
+        [SerializeField] private float timeToAddStack = 5f;
+        [SerializeField] private float StackValue = 0.9f;
+
         [Header("Stamina and Health")]
-        public float maxStaminaValue = 100f;
-        public float maxHealthValue = 50f;
         [SerializeField] private float StaminaRegen = 5f;
         [SerializeField] private float DeltaTimeToAddStamina = 1f;
         [SerializeField] private float RunningStaminaConsumption = 1f;
 
         private float _lastTimeSubstarctingStaminaValue;
+        private float _lastTimeAddCurse;
 
+        [SerializeField] private float StandartStaminaValue = 100f;
+        [SerializeField] private float StandartHealthValue = 50f;
+
+        public float maxStaminaValue = 100f;
         public float StaminaValue = 100f;
+        public float maxHealthValue = 50f;
         public float HealthValue = 50f;
 
         [Header("Player Flags")]
@@ -38,12 +46,13 @@ namespace EnderDove
 
         void Start()
         {
-            healthAndStaminaBar = GetComponent<HealthAndStaminaBar>();
+            healthAndStaminaBar = FindObjectOfType<HealthAndStaminaBar>();
             inputHandler = GetComponent<InputHandler>();
             anim = GetComponentInChildren<Animator>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
             playerLocomotion = GetComponentInChildren<PlayerLocomotion>();
-            SetMaxHealthValue(maxStaminaValue);
+            SetMaxHealthValue(StandartHealthValue);
+            SetMaxStaminaValue(StandartStaminaValue);
         }
 
         void Update()
@@ -67,6 +76,11 @@ namespace EnderDove
         {
             float delta = Time.fixedDeltaTime;
 
+            if (isSprinting)
+            {
+                ChangeStaminaValue(-RunningStaminaConsumption);
+            }
+
             if (cameraHandler != null)
             {
                 cameraHandler.FollowTarget(delta);
@@ -87,9 +101,31 @@ namespace EnderDove
             }
         }
 
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.tag == "Curse" && Time.time - _lastTimeAddCurse > timeToAddStack)
+            {
+                _lastTimeAddCurse = Time.time;
+                AddCurse();
+            }
+        }
+
+        public void AddCurse()
+        {
+            SetMaxHealthValue(maxHealthValue * StackValue);
+            SetMaxStaminaValue(maxStaminaValue * StackValue);
+            StaminaRegen = StaminaRegen * StackValue;
+        }
+
         public void SetMaxHealthValue(float maxHealth)
         {
             maxHealthValue = maxHealth;
+
+            if (HealthValue > maxHealthValue)
+            {
+                SetHealthValue(maxHealthValue);
+            }
+
             healthAndStaminaBar.HealthSlider.maxValue = (int)Mathf.Round(maxHealth);
         }
 
@@ -101,8 +137,7 @@ namespace EnderDove
 
         public void TakeDamage(float damageValue)
         {
-            HealthValue -= damageValue;
-            SetHealthValue((int)Mathf.Round(HealthValue));
+            SetHealthValue(HealthValue - damageValue);
 
             animatorHandler.PlayTargetAnimation("Damage", true);
 
@@ -126,6 +161,18 @@ namespace EnderDove
             _lastTimeSubstarctingStaminaValue = Time.time;
             StaminaValue += value;
             healthAndStaminaBar.SetCurentStamina((int)Mathf.Round(StaminaValue));
+        }
+
+        public void SetMaxStaminaValue(float maxStamina)
+        {
+            maxStaminaValue = maxStamina;
+
+            if (StaminaValue > maxStaminaValue)
+            {
+                ChangeStaminaValue(maxStaminaValue);
+            }
+
+            healthAndStaminaBar.StaminaSlider.maxValue = (int)Mathf.Round(maxStamina);
         }
     }
 }
