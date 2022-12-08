@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Curse
+  - CurseNear
+  - Damager
   layers:
   - Default
   - TransparentFX
