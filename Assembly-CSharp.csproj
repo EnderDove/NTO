@@ -56,31 +56,21 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Outline.cs" />
     <Compile Include="Assets\Scripts\Player\AnimatorHandler.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerControls.cs" />
-    <Compile Include="Assets\Scripts\PlayerItems\WeaponHolderSlot.cs" />
     <Compile Include="Assets\Scripts\Player\InputHandler.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLocomotion.cs" />
-    <Compile Include="Assets\Scripts\PlayerItems\Item.cs" />
     <Compile Include="Assets\Scripts\CameraHandler.cs" />
-    <Compile Include="Assets\Scripts\PlayerItems\WeaponSlotManager.cs" />
     <Compile Include="Assets\Scripts\ResolutionScaler.cs" />
-    <Compile Include="Assets\Scripts\PlayerItems\PlayerInventory.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
-<<<<<<< HEAD
-    <Compile Include="Assets\Scripts\Player\ResetInteracting.cs" />
+    <Compile Include="Assets\Scripts\Player\ResetAnimatorBool.cs" />
     <Compile Include="Assets\Scripts\PlayerItems\WeaponItem.cs" />
     <Compile Include="Assets\Scripts\PlayerItems\WeaponSlotManager.cs" />
     <Compile Include="Assets\Scripts\Outline.cs" />
     <Compile Include="Assets\Scripts\PlayerItems\Item.cs" />
     <Compile Include="Assets\Scripts\PlayerItems\WeaponHolderSlot.cs" />
     <Compile Include="Assets\Scripts\PlayerItems\PlayerInventory.cs" />
-=======
-    <Compile Include="Assets\Scripts\Player\ResetAnimatorBool.cs" />
-    <Compile Include="Assets\Scripts\PlayerItems\WeaponItem.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAttacker.cs" />
->>>>>>> Vladimir
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Shaders\OutlineFill.shader" />
