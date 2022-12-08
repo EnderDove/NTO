@@ -70,10 +70,10 @@
     <Compile Include="Assets\Scripts\PlayerItems\PlayerInventory.cs" />
     <Compile Include="Assets\SkythianCat\Glowing_Forest\Scripts\WaterGroup.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\Curse.cs" />
     <Compile Include="Assets\Scripts\HealthAndStaminaBar.cs" />
     <Compile Include="Assets\Scripts\Player\ResetAnimatorBool.cs" />
     <Compile Include="Assets\Scripts\PlayerItems\WeaponItem.cs" />
-    <Compile Include="Assets\Scripts\Curse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Shaders\OutlineFill.shader" />
@@ -335,6 +335,9 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Work\Unity\Versions\2021.3.15f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -809,6 +812,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{054B536D-56C3-D2BB-1D31-3A0A34A349DE}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
