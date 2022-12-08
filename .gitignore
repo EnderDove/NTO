@@ -4,11 +4,6 @@ Logs
 Packages
 Temp
 UserSettings
-<<<<<<< HEAD
-NTO.sln
-*.vsidx
-.vs/NTO 69 paws/FileContentIndex/read.lock
-=======
 NTO.sln
 Assembly-CSharp-Editor.csproj
 Assembly-CSharp.csproj
@@ -16,4 +11,3 @@ Assembly-CSharp.csproj
 *.sln
 *.vsidx
 .vs/NTO 69 paws/v17/.suo
->>>>>>> Vladimir
