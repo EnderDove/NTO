@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\HealthAndStaminaBar.cs" />
     <Compile Include="Assets\Scripts\Player\ResetAnimatorBool.cs" />
     <Compile Include="Assets\Scripts\PlayerItems\WeaponItem.cs" />
+    <Compile Include="Assets\Scripts\Damager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Shaders\OutlineFill.shader" />

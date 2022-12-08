@@ -9,10 +9,17 @@ namespace EnderDove
     {
         public Slider HealthSlider;
         public Slider StaminaSlider;
+        private float _healthValue = 50f;
+        [SerializeField] private float hpChangeSpeed = 10f;
+
+        private void Update()
+        {
+            HealthSlider.value = Mathf.MoveTowards(HealthSlider.value, _healthValue, Time.deltaTime * hpChangeSpeed);
+        }
 
         public void SetCurentHealth(int healthValue)
         {
-            HealthSlider.value = healthValue;
+            _healthValue = healthValue;
         }
 
         public void SetCurentStamina(int staminaValue)
