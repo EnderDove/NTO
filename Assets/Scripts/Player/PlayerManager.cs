@@ -6,14 +6,16 @@ namespace EnderDove
 {
     public class PlayerManager : MonoBehaviour
     {
+        HealthAndStaminaBar healthAndStaminaBar;
         InputHandler inputHandler;
         Animator anim;
+        AnimatorHandler animatorHandler;
         CameraHandler cameraHandler;
         PlayerLocomotion playerLocomotion;
 
         [Header("Stamina and Health")]
-        [SerializeField] private float maxStaminaValue = 100f;
-        [SerializeField] private float maxHealthValue = 50f;
+        public float maxStaminaValue = 100f;
+        public float maxHealthValue = 50f;
         [SerializeField] private float StaminaRegen = 5f;
         [SerializeField] private float DeltaTimeToAddStamina = 1f;
 
@@ -35,9 +37,12 @@ namespace EnderDove
 
         void Start()
         {
+            healthAndStaminaBar = GetComponent<HealthAndStaminaBar>();
             inputHandler = GetComponent<InputHandler>();
             anim = GetComponentInChildren<Animator>();
+            animatorHandler = GetComponentInChildren<AnimatorHandler>();
             playerLocomotion = GetComponentInChildren<PlayerLocomotion>();
+            SetMaxHealthValue(maxStaminaValue);
         }
 
         void Update()
@@ -76,11 +81,37 @@ namespace EnderDove
             }
         }
 
+        public void SetMaxHealthValue(float maxHealth)
+        {
+            maxHealthValue = maxHealth;
+            healthAndStaminaBar.HealthSlider.maxValue = (int)Mathf.Round(maxHealth);
+        }
+
+        public void SetHealthValue(float health)
+        {
+            HealthValue = health;
+            healthAndStaminaBar.SetCurentHealth((int)Mathf.Round(health));
+        }
+
+        public void TakeDamage(float damageValue)
+        {
+            HealthValue -= damageValue;
+            SetHealthValue((int)Mathf.Round(HealthValue));
+
+            animatorHandler.PlayTargetAnimation("Damage", true);
+
+            if (HealthValue <= 0)
+            {
+                animatorHandler.PlayTargetAnimation("Death", true);
+            }
+        }
+
         public void RegenStamina(float value)
         {
             if (Time.time - _lastTimeSubstarctingStaminaValue < DeltaTimeToAddStamina && StaminaValue < maxStaminaValue)
             {
                 StaminaValue += value * StaminaRegen;
+                healthAndStaminaBar.SetCurentStamina((int)Mathf.Round(StaminaValue));
             }
         }
 
@@ -88,6 +119,7 @@ namespace EnderDove
         {
             _lastTimeSubstarctingStaminaValue = Time.time;
             StaminaValue += value;
+            healthAndStaminaBar.SetCurentStamina((int)Mathf.Round(StaminaValue));
         }
     }
 }

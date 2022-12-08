@@ -7,9 +7,19 @@ namespace EnderDove
 {
     public class HealthAndStaminaBar : MonoBehaviour
     {
-        public void SetCurentHealt(int healthValue)
-        {
+        public Slider HealthSlider;
+        public Slider StaminaSlider;
 
+
+
+        public void SetCurentHealth(int healthValue)
+        {
+            HealthSlider.value = healthValue;
+        }
+
+        public void SetCurentStamina(int staminaValue)
+        {
+            StaminaSlider.value = staminaValue;
         }
     }
 }
