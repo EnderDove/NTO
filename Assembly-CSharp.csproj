@@ -79,7 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Shaders\OutlineFill.shader" />
-    <None Include="Assets\WavingGrass\Shader\GrassWind.shader" />
     <None Include="Assets\Resources\Shaders\OutlineMask.shader" />
   </ItemGroup>
   <ItemGroup>
