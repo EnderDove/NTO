@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using DG.Tweening;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace EnderDove
@@ -20,6 +18,18 @@ namespace EnderDove
 
         public void OnTriggerStay(Collider other)
         {
+            if (_activavtion)
+            {
+                _activavtion = false;
+                float x = 2 * _curse.position.x - player.position.x;
+                float z = 2 * _curse.position.z - player.position.z;
+                Vector3 pos = new Vector3(x, 2.99f, z);
+                clear = Instantiate(totem, pos, Quaternion.identity);
+                clear.transform.LookAt(_curse.position, Vector3.up);
+                Transform _clear = clear.GetComponent<Transform>();
+                _clear.rotation = Quaternion.Euler(-90, _clear.rotation.y + 90, _clear.rotation.z);
+            }
+
             if (other.tag == "Player" && Time.time - _lastTime > timeToNextMove)
             {
                 float x = Random.Range(-5, 5) + 2 * _curse.position.x - player.position.x;
@@ -28,27 +38,14 @@ namespace EnderDove
                 _lastTime = Time.time;
                 UICurse.color = new Color(1f, 1f, 1f, 1f);
             }
+        }
 
-            if (_activavtion)
-            {
-                _activavtion = false;
-                float k = (player.position.z - _curse.position.z) / (player.position.x - _curse.position.x);
-                float b = _curse.position.z - k * _curse.position.x;
-
-                float cx = _curse.position.x;
-
-                if (player.position.x - _curse.position.x > 0)
-                {
-                    cx = Random.Range(-5, 2) + _curse.position.x;
-                }
-                else
-                {
-                    cx = Random.Range(2, 5) + _curse.position.x;
-                }
-                Vector3 pos = new Vector3(cx, 2.99f, k*cx + b);
-                clear = Instantiate(totem, pos, Quaternion.identity);
-                clear.GetComponent<Transform>().Rotate(new Vector3(-90, 0, 0)); ;
-            }
+        public void ClearCurse()
+        {
+            FindObjectOfType<PlayerManager>().ResetCurse();
+            UICurse.color = new Color(1f, 1f, 1f, 0f);
+            Destroy(FindObjectOfType<Curse>().gameObject);
+            Destroy(clear);
         }
     }
 }

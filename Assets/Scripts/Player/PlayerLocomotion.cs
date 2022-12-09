@@ -126,7 +126,7 @@ namespace EnderDove
             {
                 moveDirection = cameraObject.forward * inputHandler.vertical;
                 moveDirection = cameraObject.right * inputHandler.horisontal;
-                
+
                 playerManager.ChangeStaminaValue(-rollStaminaConsumption);
 
                 if (inputHandler.moveAmount > 0)
@@ -150,7 +150,7 @@ namespace EnderDove
             Vector3 origin = playerTransform.position;
             origin.y += groundDetectionRayStartPoint;
 
-            if(Physics.Raycast(origin, playerTransform.forward, out hit, 0.4f))
+            if (Physics.Raycast(origin, playerTransform.forward, out hit, 0.4f))
             {
                 moveDirection = Vector3.zero;
             }
@@ -176,7 +176,7 @@ namespace EnderDove
 
                 if (playerManager.isInAir)
                 {
-                    if(inAirTimer > 0.5f)
+                    if (inAirTimer > 0.5f)
                     {
                         animatorHandler.PlayTargetAnimation("Land", true);
                         inAirTimer = 0;
@@ -211,7 +211,7 @@ namespace EnderDove
                     playerManager.isInAir = true;
                 }
             }
-            
+
             if (playerManager.isGrounded)
             {
                 if (playerManager.isInteracting || inputHandler.moveAmount > 0)
