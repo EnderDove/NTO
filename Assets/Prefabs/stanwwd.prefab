@@ -9825,6 +9825,8 @@ GameObject:
   - component: {fileID: 6827116467705008635}
   - component: {fileID: 8744368733542556979}
   - component: {fileID: 8744368733542556976}
+  - component: {fileID: 1142930283676614328}
+  - component: {fileID: 2080298728036571009}
   m_Layer: 0
   m_Name: stanwwd
   m_TagString: Untagged
@@ -9927,3 +9929,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16901611, y: 0.93275404, z: 0.7935016}
   m_Center: {x: 0.067107856, y: -0.016568419, z: -0.2840186}
+--- !u!114 &1142930283676614328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025513819605659694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36d3bb36248d274597dacd6272f7776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &2080298728036571009
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025513819605659694}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5183433, y: 0.9466256, z: 1.577161}
+  m_Center: {x: -0.7672542, y: -0.011437238, z: -0.57102257}

@@ -47,13 +47,13 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.16</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.17</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2021.3.15f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Work\Lang\Microsoft VS\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Outline.cs" />
@@ -73,8 +73,9 @@
     <Compile Include="Assets\Scripts\Curse.cs" />
     <Compile Include="Assets\Scripts\HealthAndStaminaBar.cs" />
     <Compile Include="Assets\Scripts\Player\ResetAnimatorBool.cs" />
-    <Compile Include="Assets\Scripts\PlayerItems\WeaponItem.cs" />
     <Compile Include="Assets\Scripts\Damager.cs" />
+    <Compile Include="Assets\Scripts\PlayerItems\WeaponItem.cs" />
+    <Compile Include="Assets\Scripts\ClearObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Shaders\OutlineFill.shader" />
@@ -328,6 +329,9 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Work\Unity\Versions\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
@@ -336,9 +340,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Work\Unity\Versions\2021.3.15f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

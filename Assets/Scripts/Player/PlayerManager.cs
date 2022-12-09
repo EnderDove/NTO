@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EnderDove
@@ -58,7 +56,7 @@ namespace EnderDove
         void Update()
         {
             float delta = Time.fixedDeltaTime;
-            
+
             isInteracting = anim.GetBool("isInteracting");
             inputHandler.TickInput(delta);
             playerLocomotion.HandleMovement(delta);
@@ -115,6 +113,13 @@ namespace EnderDove
             SetMaxHealthValue(maxHealthValue * StackValue);
             SetMaxStaminaValue(maxStaminaValue * StackValue);
             StaminaRegen = StaminaRegen * StackValue;
+        }
+
+        public void ResetCurse()
+        {
+            SetMaxHealthValue(StandartHealthValue);
+            SetMaxStaminaValue(StandartStaminaValue);
+            SetHealthValue(maxHealthValue);
         }
 
         public void SetMaxHealthValue(float maxHealth)
