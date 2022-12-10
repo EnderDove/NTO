@@ -14,6 +14,9 @@ namespace EnderDove
         [Header("Curse")]
         [SerializeField] private float timeToAddStack = 5f;
         [SerializeField] private float StackValue = 0.9f;
+        public int s = 6;
+        public int stacks = 0;
+
 
         [Header("Stamina and Health")]
         [SerializeField] private float StaminaRegen = 5f;
@@ -112,7 +115,8 @@ namespace EnderDove
         {
             SetMaxHealthValue(maxHealthValue * StackValue);
             SetMaxStaminaValue(maxStaminaValue * StackValue);
-            StaminaRegen = StaminaRegen * StackValue;
+            StaminaRegen *= StackValue;
+            stacks += 1;
         }
 
         public void ResetCurse()
@@ -120,6 +124,7 @@ namespace EnderDove
             SetMaxHealthValue(StandartHealthValue);
             SetMaxStaminaValue(StandartStaminaValue);
             SetHealthValue(maxHealthValue);
+            StaminaRegen = 5;
         }
 
         public void SetMaxHealthValue(float maxHealth)
@@ -152,12 +157,11 @@ namespace EnderDove
             }
         }
 
-        public void RegenStamina(float value)
+        public void RegenStamina(float _time)
         {
             if (Time.time - _lastTimeSubstarctingStaminaValue < DeltaTimeToAddStamina && StaminaValue < maxStaminaValue)
             {
-                StaminaValue += value * StaminaRegen;
-                healthAndStaminaBar.SetCurentStamina((int)Mathf.Round(StaminaValue));
+                ChangeStaminaValue(StaminaRegen * _time);
             }
         }
 
