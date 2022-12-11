@@ -22,7 +22,7 @@ namespace EnderDove
 
         public void UnloadWeaponAndDestroy()
         {
-            if (curentWeaponModel!= null)
+            if (curentWeaponModel != null)
             {
                 Destroy(curentWeaponModel);
             }
