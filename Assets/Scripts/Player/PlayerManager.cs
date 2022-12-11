@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace EnderDove
 {
@@ -149,11 +150,12 @@ namespace EnderDove
         {
             SetHealthValue(HealthValue - damageValue);
 
-            animatorHandler.PlayTargetAnimation("Damage", true);
+            animatorHandler.PlayTargetAnimation("Damage", false);
 
             if (HealthValue <= 0)
             {
                 animatorHandler.PlayTargetAnimation("Death", true);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
 
