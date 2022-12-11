@@ -927,6 +927,7 @@ GameObject:
   - component: {fileID: 1428152781}
   - component: {fileID: 1428152780}
   - component: {fileID: 1428152779}
+  - component: {fileID: 1428152784}
   m_Layer: 0
   m_Name: Damager
   m_TagString: Damager
@@ -1025,6 +1026,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1428152784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428152778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278a44c6801074c40b5e09909b927810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seeDistance: 20
+  attackDistance: 2
+  speed: 4
 --- !u!1 &1484187877
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,7 +3179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fde78d5d35b5f041bb5118a6c2a5d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scale: 2.1
+  Scale: 6.86
 --- !u!1 &2977501676710626232
 GameObject:
   m_ObjectHideFlags: 0
